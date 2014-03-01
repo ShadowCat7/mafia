@@ -1,0 +1,68 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.2.14
+3 info using node@v0.8.22
+4 verbose read json c:\Users\Attridge\programs\mafia\package.json
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ 'c:\\Users\\Attridge\\programs\\mafia', [ 'ws' ] ]
+7 verbose from cache c:\Users\Attridge\programs\mafia\package.json
+8 info preinstall mafia@0.0.0
+9 verbose from cache c:\Users\Attridge\programs\mafia\package.json
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'ws@^0.4.31', null ]
+12 verbose cache add name=undefined spec="ws@^0.4.31" args=["ws@^0.4.31",null]
+13 verbose parsed url { pathname: 'ws@^0.4.31',
+13 verbose parsed url   path: 'ws@^0.4.31',
+13 verbose parsed url   href: 'ws@^0.4.31' }
+14 verbose cache add name="ws" spec="^0.4.31" args=["ws","^0.4.31"]
+15 verbose parsed url { pathname: '^0.4.31', path: '^0.4.31', href: '^0.4.31' }
+16 verbose addNamed [ 'ws', '^0.4.31' ]
+17 verbose addNamed [ null, null ]
+18 silly lockFile a5979bf9-ws-0-4-31 ws@^0.4.31
+19 verbose lock ws@^0.4.31 C:\Users\Attridge\AppData\Roaming\npm-cache\a5979bf9-ws-0-4-31.lock
+20 info addNameTag [ 'ws', '^0.4.31' ]
+21 verbose url raw ws
+22 verbose url resolving [ 'https://registry.npmjs.org/', './ws' ]
+23 verbose url resolved https://registry.npmjs.org/ws
+24 info trying registry request attempt 1 at 14:20:11
+25 verbose etag "1Y7BRQJFK7JKWWBNNTMK833E8"
+26 http GET https://registry.npmjs.org/ws
+27 http 200 https://registry.npmjs.org/ws
+28 silly registry.get cb [ 200,
+28 silly registry.get   { date: 'Sat, 01 Mar 2014 21:19:44 GMT',
+28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+28 silly registry.get     etag: '"E8SK3M2KDFU3NPDDZY682DD6F"',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     'cache-control': 'max-age=1',
+28 silly registry.get     'content-length': '115521',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     age: '818',
+28 silly registry.get     'x-served-by': 'cache-v43-ASH, cache-lax1422-LAX',
+28 silly registry.get     'x-cache': 'HIT, HIT',
+28 silly registry.get     'x-cache-hits': '1, 1',
+28 silly registry.get     'x-timer': 'S1393662494.365031242,VS0,VS21,VE22,VE46290044',
+28 silly registry.get     vary: 'Accept',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 silly lockFile a5979bf9-ws-0-4-31 ws@^0.4.31
+30 silly lockFile a5979bf9-ws-0-4-31 ws@^0.4.31
+31 error Error: No compatible version found: ws@'^0.4.31'
+31 error Valid install targets:
+31 error ["0.2.6","0.2.8","0.2.9","0.3.0","0.3.1","0.3.2","0.3.3","0.3.4","0.3.4-2","0.3.5","0.3.5-2","0.3.5-3","0.3.5-4","0.3.6","0.3.7","0.3.8","0.3.9","0.4.0","0.4.1","0.4.2","0.4.3","0.4.5","0.4.6","0.4.7","0.4.8","0.4.9","0.4.10","0.4.11","0.4.12","0.4.13","0.4.14","0.4.15","0.4.16","0.4.17","0.4.18","0.4.19","0.4.20","0.4.21","0.4.22","0.4.23","0.4.24","0.4.25","0.4.27","0.4.28","0.4.29","0.4.30","0.4.31"]
+31 error     at installTargetsError (c:\Program Files\nodejs\node_modules\npm\lib\cache.js:682:10)
+31 error     at c:\Program Files\nodejs\node_modules\npm\lib\cache.js:597:10
+31 error     at saved (c:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\get.js:138:7)
+31 error     at Object.oncomplete (fs.js:297:15)
+32 error If you need help, you may report this log at:
+32 error     <http://github.com/isaacs/npm/issues>
+32 error or email it to:
+32 error     <npm-@googlegroups.com>
+33 error System Windows_NT 6.1.7601
+34 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+35 error cwd c:\Users\Attridge\programs\mafia
+36 error node -v v0.8.22
+37 error npm -v 1.2.14
+38 verbose exit [ 1, true ]
