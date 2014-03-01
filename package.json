@@ -1,0 +1,21 @@
+{
+  "name": "mafia",
+  "version": "0.0.0",
+  "description": "Mafia game helper",
+  "scripts": {
+    "dev": "npm install && node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ShadowCat7/mafia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShadowCat7/mafia/issues"
+  },
+  "homepage": "https://github.com/ShadowCat7/mafia",
+  "dependencies": {
+    "ws": "^0.4.31"
+  }
+}
