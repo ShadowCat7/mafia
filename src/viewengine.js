@@ -3,7 +3,7 @@ var fileSystem = require('fs');
 var anyPattern = /\@(?!!)\(.*?\)/;
 var layoutPattern = /^layout\=/i;
 var dataPattern = /^data\./i;
-var partialViewPattern = /^partialFor\./i;
+var partialViewPattern = /^partialFor\=/i;
 
 function getView(viewName, viewData, callback) {
 	fileSystem.readFile('views/' + viewName, 'utf-8', function (fileError, fileData) {
@@ -29,8 +29,10 @@ function fillView(view, viewData, callback) {
 			fillData(match.slice(5, match.length), view, viewData, callback);
 		}
 		else if (partialViewPattern.test(match)) {
-			match.slice(
+			match.slice(11, match.l
 		}
+
+		fillView(view, viewData, callback);
 	}
 }
 
