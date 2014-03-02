@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Mafia game helper",
   "scripts": {
-    "dev": "npm install && node src/server.js"
+    "dev": "npm install && node lib/server.js"
   },
   "repository": {
     "type": "git",
