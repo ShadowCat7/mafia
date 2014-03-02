@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/ShadowCat7/mafia",
   "dependencies": {
-    "ws": "^0.4.31"
+    "ws": "^0.4.31",
+    "express": "~3.4.8"
   }
 }
