@@ -19,30 +19,41 @@ function login() {
   loginNameTextbox.setAttribute("disabled", "true");
   loginButton.setAttribute("disabled", "true");
   sendCommand("login", {name: name}, function(response) {
-    playerList.innerHTML += '<li>login result: ' + sanitizeHtml(JSON.stringify(response)) + '</li>';
+    console.log("login result:", JSON.stringify(response));
     loginDiv.style.display = "none";
   });
 }
 
-var playerList = document.getElementById("playerList");
+var clientList = document.getElementById("clientList");
 
+var myClientId = null;
 var webSocket = null;
 connectWebSocket();
 function connectWebSocket() {
   var url = "ws://" + location.hostname + ":" + location.port + location.pathname;
   webSocket = new WebSocket(url);
-  playerList.innerHTML += '<li>websocket connecting...</li>';
+  console.log("websocket connecting");
   webSocket.addEventListener("close", function() {
-    playerList.innerHTML += '<li>websocket closed</li>';
+    console.log("websocket closed");
   });
   webSocket.addEventListener("open", function() {
-    playerList.innerHTML += '<li>websocket open</li>';
+    console.log("websocket open");
   });
   webSocket.addEventListener("message", function(event) {
-    playerList.innerHTML += '<li>message received: ' + sanitizeHtml(event.data) + '</li>';
+    console.log("message received:", event.data);
     var message = JSON.parse(event.data);
     receiveMessage(message);
   });
+}
+
+function updateStatus(status) {
+  var clients = [];
+  for (var id in status.clients) {
+    clients.push(status.clients[id]);
+  }
+  clientList.innerHTML = clients.map(function(player) {
+    return '<li>' + sanitizeHtml(player.name) + '</li>';
+  }).join("");
 }
 
 var nextMessageId = 0;
@@ -59,8 +70,13 @@ function sendCommand(commandName, args, callback) {
 }
 function receiveMessage(message) {
   var cookie = message.cookie;
-  var callback = messageCallbacks[cookie];
-  callback(message.response);
+  var response = message.response;
+  if (cookie === "status") {
+    updateStatus(response);
+  } else {
+    var callback = messageCallbacks[cookie];
+    callback(message.response);
+  }
 }
 
 function sanitizeHtml(text) {
